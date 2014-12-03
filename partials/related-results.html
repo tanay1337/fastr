@@ -1,0 +1,7 @@
+Related Results:<hr>
+
+<ul>
+  <li ng-repeat="x in others.Search">
+    <a href="#" id="{{ $index + 1 }}" onclick="update(this)" ng-click="update()">{{ x.Title }}</a>, {{ x.Year }}
+  </li>
+</ul>

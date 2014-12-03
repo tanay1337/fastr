@@ -1,0 +1,18 @@
+<img src="{{ list.Poster }}" style="float:left; width: 150px; height: 190px; margin-right: 10px;">
+
+<strong><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></strong>, {{ list.Year }}<br>
+
+Released on: {{ list.Released }}<br><br>
+
+<p>{{ list.Plot }}</p>
+
+Directed By: {{ list.Director }}<br>
+
+Actors: {{ list.Actors }}<br><br><br>
+
+<p>Ratings:<br>
+  <strong>IMDb Rating</strong>: {{ list.imdbRating }}<br>
+  <strong>Rotten Tomatoes Rating</strong>: {{ list.tomatoRating }}
+</p>
+
+<br><br>
