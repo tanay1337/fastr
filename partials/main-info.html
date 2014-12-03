@@ -1,4 +1,4 @@
-<img src="{{ list.Poster }}" class="thumbnail" style="float:left; width: 150px; margin-right: 10px;">
+<img ng-src="{{ list.Poster }}" class="thumbnail" style="float:left; width: 150px; margin-right: 10px;">
 
 <span style="font-size:20px;"><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></span>, {{ list.Year }}<br>
 
@@ -6,18 +6,18 @@
 
 <p>{{ list.Plot }}<br></p>
 
+<p style="margin-top: 10px;">
 <span class="label label-primary">Directors:</span> {{ list.Director }}<br>
-
 <span class="label label-primary">Actors:</span> {{ list.Actors }}<br>
-
 <span class="label label-primary">Genre:</span> {{ list.Genre }}<br><br>
+</p>
 
 <p style="margin-top: 10px;">Ratings:<br>
   <strong>IMDb Rating</strong>: <span class="label label-success">{{ list.imdbRating }}</span><br>
-  <strong>Rotten Tomatoes Rating</strong>: <span class="label label-success">{{ list.tomatoRating }}</span>
+  <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ list.tomatoRating }}</span>
 </p>
 
-<p>
+<p style="margin-top: 10px;">
   <a ng-href="https://www.youtube.com/results?search_query={{ search }}" target="_blank">Watch Trailers!</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
   <a ng-href="http://www.opensubtitles.org/en/search2/sublanguageid-all/moviename-{{ search }}" target="_blank">Get Subtitles!</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
   <a ng-href="http://www.theost.com/search/custom/?key={{ search }}" target="_blank">Hear Soundtracks!</a>
