@@ -21,25 +21,25 @@
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fastr - A Quicker solution for browsing movies!</a>
+            <a class="navbar-brand" href="#"><b>Fastr</b> <span style="font-size:17px;">Movie Browser</span></a>
           </div>
         </div>
       </nav>
 
-      <div ng-controller="data" ng-init="search='hackers 1995';"> 
-        <div class="input-group">
-          <span class="input-group-addon">Search</span>
-          <input type="text" ng-model="search" class="form-control" style="width: 500px;" ng-change="change()" placeholder="Enter Movie Name" />
-        </div>
+      	<div ng-controller="data" ng-init="search='hackers';"> 
+		    <div class="input-group">
+		      <span class="input-group-addon">Search</span>
+		      <input type="text" ng-model="search" class="form-control" style="width:100%;max-width:500px;" ng-change="change()" placeholder="Enter Movie Name" autofocus />
+		    </div>
 
-        <br>
+		    <br>
 
-        <div id="main-info" ng-include="'partials/main-info.html'" ng-show="search">
-        </div>
+		    <div id="main-info" ng-include="'partials/main-info.html'" ng-show="search"></div>
 
-        <div id="related-results" ng-include="'partials/related-results.html'" ng-show="search">
-        </div>
-      </div>
+		    <div id="related-results" ng-include="'partials/related-results.html'" ng-show="search">
+		    </div>
+		  
+		</div>
     </div>
   </body>
 </html>

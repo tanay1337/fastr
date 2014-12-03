@@ -1,24 +1,47 @@
-<img src="{{ list.Poster }}" style="float:left; width: 150px; height: 190px; margin-right: 10px;">
 
-<strong><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></strong>, {{ list.Year }}<br>
+<div style="width:100%;max-width:700px;margin:5px;">
+	<img src="{{ list.Poster }}" style="float:left; width: 150px; height: auto; margin-right:10px;margin-bottom:10px; border:4px solid #696969;">
 
-Released on: {{ list.Released }}<br><br>
+	<span style="font-size:20px;"><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></span>, <span style="font-size:15px;">{{ list.Year }}</span><br>
 
-<p>{{ list.Plot }}</p>
+	<b>Released on</b> : {{ list.Released }}<br><br>
 
-Directed By: {{ list.Director }}<br>
+	<p>{{ list.Plot }}</p>
 
-Actors: {{ list.Actors }}<br><br><br>
+	<b>Directed By </b>: {{ list.Director }}<br>
 
-<p>Ratings:<br>
-  <strong>IMDb Rating</strong>: {{ list.imdbRating }}<br>
-  <strong>Rotten Tomatoes Rating</strong>: {{ list.tomatoRating }}
-</p>
+	<b>Actors </b>&#160&#160&#160&#160&#160&#160&#160&#160&#160: {{ list.Actors }}<br><br><br>
+</div>
 
-<p>
+
+<div style="margin:10px;"><strong>Ratings </strong>:<br>
+	<div style="margin:5px;">
+		<span style="
+		font:15px 'arial';
+		background-color:#ffd700;
+		color:#000000;
+		border:2px solid #696969;
+		border-radius:5px;
+		text-align:center;
+		padding-left:4px;
+		padding-right:4px;"><b>IMDb</b></span> : {{ list.imdbRating }}
+	 </div>
+
+	<div style="margin:5px;">
+		<span style="
+		font:15px 'arial';
+		background-color:;
+		color:#800000;
+		border:2px;
+		text-align:center;"><b>Rotten Tomatoes</b></span> : {{ list.tomatoRating }}
+	 </div>
+
+</div>
+
+<div style="margin:10px;">
   <a ng-href="https://www.youtube.com/results?search_query={{ search }}" target="_blank">Watch Trailers!</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
   <a ng-href="http://www.opensubtitles.org/en/search2/sublanguageid-all/moviename-{{ search }}" target="_blank">Get Subtitles!</a> &nbsp;&nbsp;|&nbsp;&nbsp; 
   <a ng-href="http://www.theost.com/search/custom/?key={{ search }}" target="_blank">Hear Soundtracks!</a>
-</p>
+</div>
 
 <br>
