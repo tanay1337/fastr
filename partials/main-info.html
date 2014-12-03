@@ -4,7 +4,7 @@
 
 <div ng-if="list.Response==='True'"><!-- Silly API !-->
 
-  <img ng-src="{{ list.Poster }}" class="thumbnail" style="float:left; width: 150px; margin-right: 10px;">
+  <img ng-src="http://imdb.wemakesites.net/api/1.0/img/?url={{ list.Poster }}" class="thumbnail" style="float:left; width: 150px; margin-right: 10px;">
 
   <span style="font-size:20px;"><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></span>, {{ list.Year }}<br>
 
