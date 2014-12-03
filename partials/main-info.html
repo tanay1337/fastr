@@ -1,18 +1,20 @@
-<img src="{{ list.Poster }}" style="float:left; width: 150px; height: 190px; margin-right: 10px;">
+<img src="{{ list.Poster }}" class="thumbnail" style="float:left; width: 150px; height: 190px; margin-right: 10px;">
 
 <strong><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></strong>, {{ list.Year }}<br>
 
-Released on: {{ list.Released }}<br><br>
+Released on: {{ list.Released }} ({{ list.Runtime }})<br><br>
 
-<p>{{ list.Plot }}</p>
+<p>{{ list.Plot }}<br></p>
 
-Directed By: {{ list.Director }}<br>
+<span class="label label-primary">Directors:</span> {{ list.Director }}<br>
 
-Actors: {{ list.Actors }}<br><br><br>
+<span class="label label-primary">Actors:</span> {{ list.Actors }}<br>
+
+<span class="label label-primary">Genre:</span> {{ list.Genre }}<br><br>
 
 <p>Ratings:<br>
-  <strong>IMDb Rating</strong>: {{ list.imdbRating }}<br>
-  <strong>Rotten Tomatoes Rating</strong>: {{ list.tomatoRating }}
+  <strong>IMDb Rating</strong>: <span class="label label-success">{{ list.imdbRating }}</span><br>
+  <strong>Rotten Tomatoes Rating</strong>: <span class="label label-success">{{ list.tomatoRating }}</span>
 </p>
 
 <p>
