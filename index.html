@@ -25,18 +25,25 @@
           </div>
         </div>
       </nav>
-
-      <div ng-controller="data" ng-init="search='hackers';"> 
-        <div class="input-group">
-          <span class="input-group-addon">Search</span>
+    
+         
+      <div ng-controller="data" ng-init="search='';"> 
+         <div class="col-md-4"> </div>
+          <div class="col-md-4"> 
+              <div class="input-group">
+         
           <input type="text" ng-model="search" class="form-control" style="width:100%; max-width:500px;" ng-change="change()" placeholder="Enter Movie Name" autofocus />
-        </div>
 
-        <br>
-
+          <span class="input-group-addon">Search</span>
+                </div>
+          </div>
+          <div class="col-md-4"> </div>
+        <hr>
+      
         <div id="main-info" ng-include="'partials/main-info.html'" ng-show="search" class="col-md-8"></div>
 
         <div id="related-results" ng-include="'partials/related-results.html'" ng-show="search" class="col-md-4"></div>
+         
 
       </div>
     </div>
