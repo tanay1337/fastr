@@ -4,6 +4,7 @@
     <title>Fastr Movie Search</title>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -26,7 +27,7 @@
         </div>
       </nav>
 
-      <div ng-controller="data" ng-init="search='hackers';"> 
+      <div ng-controller="data" ng-init="search='hackers';" class="animated zoomInRight"> 
         <div class="input-group">
           <span class="input-group-addon">Search</span>
           <input type="text" ng-model="search" class="form-control" style="width:100%; max-width:500px;" ng-change="change()" placeholder="Enter Movie Name" autofocus />
@@ -36,7 +37,7 @@
 
         <div id="main-info" ng-include="'partials/main-info.html'" ng-show="search" class="col-md-8"></div>
 
-        <div id="related-results" ng-include="'partials/related-results.html'" ng-show="search" class="col-md-4"></div>
+        <div id="related-results" ng-include="'partials/related-results.html'" ng-show="search" class="col-md-4 animated bounce"></div>
 
       </div>
     </div>
