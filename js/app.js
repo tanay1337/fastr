@@ -17,13 +17,13 @@ function data($scope,$http) {
     if(pendingTask) {
       clearTimeout(pendingTask);
     }
-    pendingTask = setTimeout(fetch, 500);
+    pendingTask = setTimeout(fetch, 800);
   };
   
-  $http.get("http://www.omdbapi.com/?t=" + "hackers" + "&tomatoes=true&plot=full")
+  $http.get("http://www.omdbapi.com/?t=" + "Sherlock Holmes" + "&tomatoes=true&plot=full")
    .success(function(response) {$scope.list = response;});
 
-  $http.get("http://www.omdbapi.com/?s=" + "hackers" + "&tomatoes=true&plot=full")
+  $http.get("http://www.omdbapi.com/?s=" + "Sherlock Holmes" + "&tomatoes=true&plot=full")
    .success(function(response) {$scope.others = response;});
 
   $scope.update = function() {
