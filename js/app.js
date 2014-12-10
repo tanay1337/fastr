@@ -8,7 +8,7 @@ function data($scope,$http) {
     $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
      .success(function(response) {$scope.list = response;}); 
 
-    $http.get("http://www.omdbapi.com/?s=" + $scope.search + "&tomatoes=true&plot=full")
+    $http.get("http://www.omdbapi.com/?s=" + $scope.search)
      .success(function(response) {$scope.others = response;});
   }
 
@@ -23,7 +23,7 @@ function data($scope,$http) {
   $http.get("http://www.omdbapi.com/?t=" + "Sherlock Holmes" + "&tomatoes=true&plot=full")
    .success(function(response) {$scope.list = response;});
 
-  $http.get("http://www.omdbapi.com/?s=" + "Sherlock Holmes" + "&tomatoes=true&plot=full")
+  $http.get("http://www.omdbapi.com/?s=" + "Sherlock Holmes")
    .success(function(response) {$scope.others = response;});
 
   $scope.update = function() {
