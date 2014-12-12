@@ -29,7 +29,7 @@
 
       <div  ng-controller="data"  class="animated zoomInRight"> 
         <div class="input-group" style="width:100%; max-width:500px;">
-          <input type="text" ng-model="search" ng-change="change()" class="form-control" placeholder="Enter full movie name" autofocus />
+          <input type="text" ng-model="search" ng-change="change()" onclick="this.setSelectionRange(0, this.value.length)" class="form-control" placeholder="Enter full movie name" autofocus />
           <span class="input-group-addon" style="background: #337AB7; color: rgb(250,250,250); "><i class="glyphicon glyphicon-search"></i></span>
         </div>
 
