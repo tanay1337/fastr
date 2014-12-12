@@ -13,10 +13,16 @@
   <p>{{ list.Plot }}<br></p>
 
   <p style="margin-top: 10px;">
-    <span class="label label-primary">Directors:</span> {{ list.Director }}<br>
-    <span class="label label-primary">Actors:</span> {{ list.Actors }}<br>
-    <span class="label label-primary">Genre:</span> {{ list.Genre }}<br><br>
-  </p>
+    <div style="margin:2px;">
+      <span class="label label-primary">Directors :</span> {{ list.Director }}
+    </div>
+    <div style="margin:2px;">
+      <span class="label label-primary">Actors :</span> {{ list.Actors }}
+    </div>
+    <div style="margin:2px;">
+      <span class="label label-primary">Genre :</span> {{ list.Genre }}
+    </div>  
+  </p><br>
 
   <p style="margin-top: 5px;">Ratings:<br>
     <strong>IMDb Rating</strong>: <span class="label label-success">{{ list.imdbRating }}</span><br>
