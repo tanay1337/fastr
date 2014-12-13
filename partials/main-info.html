@@ -4,7 +4,7 @@
 
 <div ng-if="list.Response==='True'"><!-- Silly API !-->
 
-  <img ng-src="http://imdb.wemakesites.net/api/1.0/img/?url={{ list.Poster }}" class="thumbnail animated flip" style="float:left; width: 150px; margin-right: 10px; -moz-animation-delay: 1s; -webkit-animation-delay: 1s;">
+  <img ng-src="{{ list.Poster=='N/A' ? 'http://poster-imghoster.rhcloud.com/postere/poster.php?img=3364774' : 'http://imdb.wemakesites.net/api/1.0/img/?url='+list.Poster }}" class="thumbnail animated flip" style="float:left; width: 150px; margin-right: 10px; -moz-animation-delay: 1s; -webkit-animation-delay: 1s;">
 
   <span style="font-size:20px;"><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></span>, {{ list.Year }}<br>
 
@@ -13,10 +13,16 @@
   <p>{{ list.Plot }}<br></p>
 
   <p style="margin-top: 10px;">
-    <span class="label label-primary">Directors:</span> {{ list.Director }}<br>
-    <span class="label label-primary">Actors:</span> {{ list.Actors }}<br>
-    <span class="label label-primary">Genre:</span> {{ list.Genre }}<br><br>
-  </p>
+    <div style="margin:2px;">
+      <span class="label label-primary">Directors :</span> {{ list.Director }}
+    </div>
+    <div style="margin:2px;">
+      <span class="label label-primary">Actors :</span> {{ list.Actors }}
+    </div>
+    <div style="margin:2px;">
+      <span class="label label-primary">Genre :</span> {{ list.Genre }}
+    </div>  
+  </p><br>
 
   <p style="margin-top: 5px;">Ratings:<br>
     <strong>IMDb Rating</strong>: <span class="label label-success">{{ list.imdbRating }}</span><br>
