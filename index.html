@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app ng-controller="data">
   <head>
-    <title>Fastr Movie Search</title>
+    <title ng-bind="'Fastr - ' + list.Title"></title>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="css/animate.min.css">
@@ -44,7 +44,7 @@
         <div class="nojs">Javascript is either disabled or not supported in you browser. Please enable it or use a Javascript enabled browser.</div>
       </noscript>
       
-      <div  ng-controller="data"  class="animated zoomInRight"> 
+      <div  class="animated zoomInRight"> 
         <div class="input-group" style="width:100%; max-width:500px;">
           <input type="text" ng-model="search" ng-change="change()" onclick="this.setSelectionRange(0, this.value.length)" class="form-control" placeholder="Enter full movie name" autofocus />
           <span class="input-group-addon" style="background: #337AB7; color: rgb(250,250,250); "><i class="glyphicon glyphicon-search"></i></span>
