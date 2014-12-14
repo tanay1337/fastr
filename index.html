@@ -16,6 +16,16 @@
       ul.rel-results {
         list-style-type:circle;
       }
+      .nojs {
+        padding:2px;
+        padding-left:6px;
+        margin-bottom:5px;
+        background:#ff0000;
+        color:#ffffff;
+        font-size:15px;
+        border:1px solid #ff0000;
+        border-radius:5px;
+      }
     </style>
   </head>
 
@@ -29,7 +39,11 @@
           </div>
         </div>
       </nav>
-
+      
+      <noscript>
+        <div class="nojs">Javascript is either disabled or not supported in you browser. Please enable it or use a Javascript enabled browser.</div>
+      </noscript>
+      
       <div  ng-controller="data"  class="animated zoomInRight"> 
         <div class="input-group" style="width:100%; max-width:500px;">
           <input type="text" ng-model="search" ng-change="change()" onclick="this.setSelectionRange(0, this.value.length)" class="form-control" placeholder="Enter full movie name" autofocus />
