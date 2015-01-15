@@ -1,7 +1,7 @@
 fastr
 =====
 
-A Quicker solution for browsing movies!
+A Quicker solution for browsing movies and TV shows!
 
 ### Contributing ###
 
