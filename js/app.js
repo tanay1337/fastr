@@ -20,6 +20,10 @@ function data($scope, $http) {
   	$scope.change();
   };
 
+  $scope.select = function() {
+    this.setSelectionRange(0, this.value.length);
+  }
+
   function fetch() {
     $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
      .success(function(response) {$scope.list = response;});

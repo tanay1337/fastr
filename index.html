@@ -12,12 +12,12 @@
   </head>
 
   <body>
-    <div class="container-fluid" style="margin-top:60px;">
+    <div class="container-fluid outerdiv">
 
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#"><b>Fastr</b> <span style="font-size:17px;">Movie Browser</span></a>
+            <a class="navbar-brand" href="#"><b>Fastr</b> <span class="span-style">Movie Browser</span></a>
           </div>
         </div>
       </nav>
@@ -27,19 +27,18 @@
       </noscript>
       
       <div  class="animated zoomInRight"> 
-        <div class="input-group" style="width:100%; max-width:500px;">
-          <input type="text" ng-model="search" ng-change="change()" onclick="this.setSelectionRange(0, this.value.length)" class="form-control" placeholder="Enter full movie name" autofocus />
-          <span class="input-group-addon" style="background: #337AB7; color: rgb(250,250,250); "><i class="glyphicon glyphicon-search"></i></span>
+        <div class="input-group search-bar">
+          <input type="text" ng-model="search" ng-change="change()" onclick="select()" class="form-control" placeholder="Enter full movie name" autofocus />
+          <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
         </div>
 
         <br>
 
         <div id="main-info" ng-include="'partials/main-info.html'" ng-show="search" class="col-md-8"></div>
 
-        <div id="related-results" ng-include="'partials/related-results.html'" ng-show="search" class="col-md-4 animated bounce" style="-moz-animation-delay: 1.5s; -webkit-animation-delay: 1.5s;"></div>
+        <div id="related-results" ng-include="'partials/related-results.html'" ng-show="search" class="col-md-4 animated bounce related-results"></div>
 
       </div>
     </div>
-  <script src="js/google-analytics.js"></script>
   </body>
 </html>
