@@ -30,6 +30,7 @@ ul.rel-results {
 .search-bar {
   width:100%;
   max-width:500px;
+  margin-bottom: 25px;
 }
 
 .bar-style {
@@ -68,4 +69,12 @@ ul.rel-results {
 
 .outer-p-3 {
   margin-top: 15px;
+}
+
+.divider{
+  margin: 0 8px 0 8px;
+}
+
+.divider:before {
+  content: "|";
 }

@@ -1,7 +1,9 @@
-Related Results:<hr>
+<div ng-if="related.Response!=='False'">
+  Related Results:<hr>
 
-<ul class="rel-results">
-  <li ng-repeat="x in others.Search">
-    <a href="#" id="{{ $index + 1 }}" onclick="update(this)" ng-click="update()">{{ x.Title }}</a>, {{ x.Year }}
-  </li>
-</ul>
+  <ul class="rel-results">
+    <li ng-repeat="movie in related.Search">
+      <a href="#" id="{{ $index + 1 }}" ng-click="update(movie)">{{ movie.Title }}</a>, {{ movie.Year }}
+    </li>
+  </ul>
+</div>
