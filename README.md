@@ -3,7 +3,7 @@ fastr
 
 A Quicker solution for browsing movies and TV shows!
 
-![screenshot]()
+![screenshot](https://raw.github.com/jonnyhsy/fastr/master/Fastr-Movie-Browser.png)
 
 Code from SitePoint article "Making API Calls in AngularJS using Angular's $http service"
 
