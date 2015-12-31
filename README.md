@@ -3,6 +3,8 @@ fastr
 
 A Quicker solution for browsing movies and TV shows!
 
+![screenshot]()
+
 Code from SitePoint article "Making API Calls in AngularJS using Angular's $http service"
 
 Article URL: http://www.sitepoint.com/api-calls-angularjs-http-service
