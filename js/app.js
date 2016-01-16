@@ -2,11 +2,11 @@
 
 angular.module('myApp', [])
   .controller('MovieController', function($scope, $http){
-    $scope.search = "Sherlock Holmes";
-
     $scope.$watch('search', function() {
       fetch();
     });
+
+    $scope.search = "Sherlock Holmes";
 
     function fetch(){
       $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
@@ -18,7 +18,6 @@ angular.module('myApp', [])
 
     $scope.update = function(movie){
       $scope.search = movie.Title;
-      fetch();
     };
 
     $scope.select = function(){
