@@ -25,7 +25,7 @@
 
       <div class="animated zoomInRight">
         <div class="input-group search-bar">
-          <input type="text" ng-model="search" ng-change="change()" onclick="select()" class="form-control" placeholder="Enter full movie name" autofocus />
+          <input type="text" ng-model="search" ng-model-options="{ debounce: 800 }" onclick="select()" class="form-control" placeholder="Enter full movie name" autofocus />
           <span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
         </div>
 
