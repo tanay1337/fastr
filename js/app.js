@@ -1,39 +1,26 @@
-function data($scope, $http) {
-  // when the page loads for the first time
-  if($scope.search == undefined) {
+'use strict';
+
+angular.module('myApp', [])
+  .controller('MovieController', function($scope, $http){
+    $scope.$watch('search', function() {
+      fetch();
+    });
+
     $scope.search = "Sherlock Holmes";
-    fetch();
-  }
 
-  var pendingTask;
+    function fetch(){
+      $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
+      .then(function(response){ $scope.details = response.data; });
 
-  // will load results when the string in search box changes
-  $scope.change = function() {
-    if(pendingTask) {
-      clearTimeout(pendingTask);
+      $http.get("http://www.omdbapi.com/?s=" + $scope.search)
+      .then(function(response){ $scope.related = response.data; });
     }
-    pendingTask = setTimeout(fetch, 800);
-  };
 
-  $scope.update = function() {
-    $scope.search = $scope.others.Search[index].Title;
-  	$scope.change();
-  };
+    $scope.update = function(movie){
+      $scope.search = movie.Title;
+    };
 
-  $scope.select = function() {
-    this.setSelectionRange(0, this.value.length);
-  }
-
-  function fetch() {
-    $http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
-     .success(function(response) {$scope.list = response;});
-
-    $http.get("http://www.omdbapi.com/?s=" + $scope.search)
-     .success(function(response) {$scope.others = response;});
-  }
-
-} // end of controller 'data'
-
-function update(elem) {
-  index = elem.id - 1;
-}
+    $scope.select = function(){
+      this.setSelectionRange(0, this.value.length);
+    }
+  });

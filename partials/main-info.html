@@ -1,43 +1,46 @@
-<div ng-if="!list">
+<div ng-if="!details">
   Loading results...
 </div>
 
-<div ng-if="list.Response==='True'"><!-- Silly API !-->
+<div ng-if="details.Response==='True'">
+  <img ng-src="{{ details.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : details.Poster }}" class="thumbnail animated flip movie-poster">
 
-  <img ng-src="{{ list.Poster=='N/A' ? 'http://poster-imghoster.rhcloud.com/postere/poster.php?img=3364774' : 'http://imdb.wemakesites.net/api/1.0/img/?url='+list.Poster }}" class="thumbnail animated flip movie-poster">
+  <span class="span-outer">
+    <a href="http://imdb.com/title/{{ details.imdbID }}" target="_blank">{{ details.Title }}</a>
+  </span>, {{ details.Year }}
 
-  <span class="span-outer"><a href="http://imdb.com/title/{{ list.imdbID }}" target="_blank">{{ list.Title }}</a></span>, {{ list.Year }}<br>
+  <p><strong>Released on:</strong> {{ details.Released }} ({{ details.Runtime }})</p>
 
-  <strong>Released on:</strong> {{ list.Released }} ({{ list.Runtime }})<br><br>
-
-  <p>{{ list.Plot }}<br></p>
+  <p>{{ details.Plot }}</p>
 
   <p class="outer-p">
     <div class="inner-p">
-      <span class="label label-primary">Directors :</span> {{ list.Director }}
+      <span class="label label-primary">Directors :</span> {{ details.Director }}
     </div>
     <div class="inner-p">
-      <span class="label label-primary">Actors :</span> {{ list.Actors }}
+      <span class="label label-primary">Actors :</span> {{ details.Actors }}
     </div>
     <div class="inner-p">
-      <span class="label label-primary">Genre :</span> {{ list.Genre }}
-    </div>  
-  </p><br>
+      <span class="label label-primary">Genre :</span> {{ details.Genre }}
+    </div>
+  </p>
 
   <p class="outer-p-2">Ratings:<br>
-    <strong>IMDb Rating</strong>: <span class="label label-success">{{ list.imdbRating }}</span><br>
-    <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ list.tomatoRating }}</span>
+    <strong>IMDb Rating</strong>: <span class="label label-success">{{ details.imdbRating }}</span><br>
+    <strong>Rotten Tomatoes</strong>: <span class="label label-success">{{ details.tomatoRating }}</span>
   </p>
 
   <p class="outer-p-3">
-    <a ng-href="https://www.youtube.com/results?search_query={{ list.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a> | 
-    <a ng-href="http://subscene.com/subtitles/title?q={{ list.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Get Subtitles!</a> |
-    <a ng-href="http://www.theost.com/search/custom/?key={{ list.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Hear Soundtracks!</a> |
-    <a ng-href="http://www.amazon.in/s/ref=nb_sb_noss_1?url=search-alias%3Ddvd&field-keywords={{ list.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buy this movie!</a>
+    <a ng-href="https://www.youtube.com/results?search_query={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
+    <span class="divider"></span>
+    <a ng-href="http://subscene.com/subtitles/title?q={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Get Subtitles!</a>
+    <span class="divider"></span>
+    <a ng-href="http://www.theost.com/search/custom/?key={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Hear Soundtracks!</a>
+    <span class="divider"></span>
+    <a ng-href="http://www.amazon.in/s/ref=nb_sb_noss_1?url=search-alias%3Ddvd&field-keywords={{ details.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buy this movie!</a>
   </p>
-
-  <br>
 </div>
-<div ng-if="list.Response==='False'">
+
+<div ng-if="details.Response==='False'">
   No results found.
 </div>
