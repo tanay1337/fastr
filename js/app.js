@@ -30,6 +30,15 @@ function data($scope, $http) {
 
     $http.get("http://www.omdbapi.com/?s=" + $scope.search)
      .success(function(response) {$scope.others = response;});
+
+     reAnimate();
+  }
+
+  function reAnimate() {
+    $("#movie-poster").removeClass("animated flip");
+    setTimeout(function(){
+      $("#movie-poster").addClass("animated flip");
+    }, 100)
   }
 
 } // end of controller 'data'
